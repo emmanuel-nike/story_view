@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:flutter/material.dart';
@@ -52,6 +51,7 @@ class StoryItem {
   static StoryItem text({
     required String title,
     required Color backgroundColor,
+    LinearGradient? backgroundGradient,
     Key? key,
     TextStyle? textStyle,
     bool shown = false,
@@ -74,6 +74,7 @@ class StoryItem {
         key: key,
         decoration: BoxDecoration(
           color: backgroundColor,
+          gradient: backgroundGradient,
           borderRadius: BorderRadius.vertical(
             top: Radius.circular(roundedTop ? 8 : 0),
             bottom: Radius.circular(roundedBottom ? 8 : 0),
