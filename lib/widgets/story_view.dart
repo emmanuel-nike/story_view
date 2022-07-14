@@ -88,7 +88,9 @@ class StoryItem {
           child: Text(
             title,
             style: textStyle?.copyWith(
-                  color: contrast > 1.8 ? Colors.white : Colors.black,
+                  color: textStyle.color == null
+                      ? (contrast > 1.8 ? Colors.white : Colors.black)
+                      : textStyle.color,
                 ) ??
                 TextStyle(
                   color: contrast > 1.8 ? Colors.white : Colors.black,
